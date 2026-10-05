@@ -66,6 +66,8 @@
     }; 
   };
 
+  programs.hyprland.enable = true; # Must exist before `home-manager`.
+
   hardware.graphics.enable = true;
   systemd.services.seatd.enable = true;
   xdg.portal = {

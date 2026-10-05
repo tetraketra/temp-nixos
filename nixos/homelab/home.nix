@@ -35,7 +35,6 @@
   my.noctalia.enable = true;
   my.hyprland.enable = true;
   programs = {
-    hyprland.enable = true; # Must exist before `home-manager`.
     home-manager.enable = true;
     git.enable = true;
   };
