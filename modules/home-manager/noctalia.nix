@@ -22,6 +22,7 @@
       fuzzel.enable = true;
       swaylock.enable = true;
       waybar.enable = true;
+      noctalia.enable = true;
     };
 
     home.file.".config/noctalia/config.toml".source = ../../dotfiles/noctalia.config.toml;
