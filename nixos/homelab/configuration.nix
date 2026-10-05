@@ -48,12 +48,19 @@
   networking.hostName = "homelab";
   networking.hostId = "9f82jk1k";
 
-  users.users.root = {
-    openssh.authorizedKeys.keys = [
+  users.users = {
+    root.openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGqJD0ytcvuTkmHuPcLQK6XfBThIL58XcilCjDUif0iC borte@bortemoi.com" # Workstation
     ];
-  };
 
+    bortemoi = {
+      isNormalUser = true;
+      description = "bortemoi";
+      initialPassword = "bortemoi";
+      extraGroups = [ "networkmanager" "wheel" ];
+    };
+  };
+  
   services.openssh = {
     enable = true;
     settings = {
