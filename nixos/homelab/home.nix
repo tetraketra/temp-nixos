@@ -43,8 +43,6 @@
             layout "us"
           }
         }
-
-        focus-follows-mouse false
       }
 
       layout {

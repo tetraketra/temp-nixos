@@ -44,7 +44,7 @@
     };
     channel.enable = true; # Disabling is safer but then you lose `nix shell`.
   };
-
+  
   networking.hostName = "homelab";
   networking.hostId = "6b6c9563";
 
@@ -68,6 +68,8 @@
       PasswordAuthentication = false;
     };
   };
+
+  programs.niri.enable = true; # Need to have before home-manager.
 
   system.stateVersion = "25.11";
 }
