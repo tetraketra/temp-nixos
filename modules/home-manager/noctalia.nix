@@ -24,6 +24,6 @@
       waybar.enable = true;
     };
 
-    home.file.".config/noctalia/config.toml".source = ../../dotfiles/noctalia.config.conf;
+    home.file.".config/noctalia/config.toml".source = ../../dotfiles/noctalia.config.toml;
   };
 }
