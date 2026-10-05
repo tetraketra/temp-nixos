@@ -29,7 +29,7 @@
       vscode
     ];
 
-    file.".config/niri/config.kdl".source = ./config.niri.config.kdl;
+    file.".config/niri/config.kdl".source = ./config/niri.config.kdl;
   };
 
   my.noctalia.enable = true;
