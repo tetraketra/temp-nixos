@@ -30,6 +30,7 @@
   my.kitty.enable = true;
   my.noctalia.enable = true;
   my.hyprland.enable = true;
+  my.common.enable = true;
   programs = {
     home-manager.enable = true;
     git.enable = true;
