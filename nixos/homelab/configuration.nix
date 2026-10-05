@@ -68,7 +68,7 @@
     };
   };
 
-  programs.hyperland.enable = true;
+  programs.hyprland.enable = true;
   programs.uwsm.enable = true;
 
   security.polkit.enable = true;
