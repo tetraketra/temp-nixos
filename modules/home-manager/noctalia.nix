@@ -4,9 +4,10 @@
   inputs,
   ...
 }: {
-  imports = [
-    inputs.noctalia.homeModules.default
-  ];
+  # # Expects.
+  # imports = [
+  #   inputs.noctalia.homeModules.default
+  # ];
 
   options.my.noctalia.enable =
     lib.mkEnableOption "Noctalia Shell";

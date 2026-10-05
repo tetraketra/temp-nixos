@@ -6,6 +6,7 @@
   ...
 }: {
   imports = [
+    inputs.noctalia.homeModules.default
     inputs.self.homeManagerModules.noctalia
   ];
 
