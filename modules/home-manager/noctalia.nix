@@ -6,7 +6,7 @@
   ...
 }: 
 let
-  myWallpaper = ../../dotfiles/grey-slats.png;
+  myWallpaper = ../../dotfiles/wallpapers/kanaga-street.jpg;
 in
 {
   imports = [
