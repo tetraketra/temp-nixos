@@ -10,17 +10,18 @@ let
     pname = "kanagawa";
     version = "0.0.1";
 
-    # nix-prefetch-url --unpack \
-    #   https://github.com/barklan/kanagawa.vscode/archive/refs/heads/main.tar.gz
+    vscodeExtPublisher = "barklan";
+    vscodeExtName = "kanagawa";
+    vscodeExtUniqueId = "barklan.kanagawa";
+
     src = pkgs.fetchFromGitHub {
       owner = "barklan";
       repo = "kanagawa.vscode";
       rev = "main";
+      # nix-prefetch-url --unpack \
+      #   https://github.com/barklan/kanagawa.vscode/archive/refs/heads/main.tar.gz
       hash = "sha256-0pmixmzhmn4r5xbi999mcwfpj4pl96aaqsdzlkyklzdr9nb2n6vx=";
     };
-
-    vscodeExtPublisher = "barklan";
-    vscodeExtName = "kanagawa";
   };
 in
 {
