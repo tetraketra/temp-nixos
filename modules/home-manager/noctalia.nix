@@ -4,14 +4,14 @@
   inputs,
   ...
 }: {
+  imports = [
+    inputs.noctalia.homeModules.default
+  ];
+
   options.my.noctalia.enable =
     lib.mkEnableOption "Noctalia Shell";
 
   config = lib.mkIf config.my.noctalia.enable {
-    imports = [
-      inputs.noctalia.homeModules.default
-    ];
-
     programs.noctalia = {
       enable = true;
 
