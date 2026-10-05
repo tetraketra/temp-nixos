@@ -41,8 +41,6 @@
       COLORFGBG = "15;0";
     };
 
-    systemd.user.sessionVariables = home.sessionVariables;
-
     dconf.settings = {
       "org/gnome/desktop/background" = {
         picture-uri-dark = "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
