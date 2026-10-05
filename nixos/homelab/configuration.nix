@@ -46,7 +46,7 @@
   };
 
   networking.hostName = "homelab";
-  networking.hostId = "9f82jk1k";
+  networking.hostId = "6b6c9563";
 
   users.users = {
     root.openssh.authorizedKeys.keys = [
