@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    inputs.self.homeManagerModules.my-noctalia
+    inputs.self.homeManagerModules.noctalia
   ];
 
   nixpkgs = {
