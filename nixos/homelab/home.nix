@@ -9,6 +9,7 @@
     inputs.self.homeManagerModules.noctalia
     inputs.self.homeManagerModules.kitty
     inputs.self.homeManagerModules.hyprland
+    inputs.self.homeManagerModules.common
   ];
 
   nixpkgs = {
@@ -24,11 +25,6 @@
   home = {
     username = "bortemoi";
     homeDirectory = "/home/bortemoi";
-
-    packages = with pkgs; [
-      firefox
-      vscode
-    ];
   };
 
   my.kitty.enable = true;

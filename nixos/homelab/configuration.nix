@@ -75,5 +75,10 @@
     config.common.default = "*";
   };
 
+  virtualisation.vmVariant = {
+    virtualisation.memorySize = 8192;
+    virtualisation.cores = 8;
+  };
+
   system.stateVersion = "25.11";
 }
