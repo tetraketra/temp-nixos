@@ -24,12 +24,11 @@
     homeDirectory = "/home/bortemoi";
 
     packages = with pkgs; [
-      swaybg
       firefox
       vscode
     ];
 
-    file.".config/niri/config.kdl".source = ./config/niri.config.kdl;
+    file.".config/hypr/hyprland.conf".source = ./config/hyprland.conf;
   };
 
   my.noctalia.enable = true;
@@ -43,9 +42,9 @@
   };
 
   services = {
-    mako.enable = true; # notification daemon
-    swayidle.enable = true; # idle management daemon
-    polkit-gnome.enable = true; # polkit
+    mako.enable = true;
+    swayidle.enable = true;
+    polkit-gnome.enable = true;
   };
 
   home.stateVersion = "25.11";

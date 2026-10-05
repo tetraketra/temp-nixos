@@ -68,17 +68,20 @@
     };
   };
 
-  programs.niri.enable = true;
+  programs.hyperland.enable = true;
+  programs.uwsm.enable = true;
+
   security.polkit.enable = true;
   services.gnome.gnome-keyring.enable = true;
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${config.programs.niri.package}/bin/niri-session";
-        user = "bortemoi";
-      };
-    };
+
+  services.greetd = { 
+    enable = true; 
+    settings = { 
+      default_session = { 
+        command = "${pkgs.uwsm}/bin/uwsm start hyprland-uwsm.desktop"; 
+        user = "bortemoi"; 
+      }; 
+    }; 
   };
 
   hardware.graphics.enable = true;
