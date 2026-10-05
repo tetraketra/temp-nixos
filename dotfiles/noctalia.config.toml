@@ -1,5 +1,4 @@
 [accessibility]
-high_contrast = true
 ui_scale = 0.75
 
 [bar]
@@ -54,7 +53,7 @@ enabled = false
 alpha = 0.0
 
 [theme]
-builtin = "Kangawa"
+builtin = "Kanagawa"
 shell_mode = "dark"
 
 [widget.date]
