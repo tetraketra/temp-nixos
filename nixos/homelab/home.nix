@@ -29,7 +29,6 @@
       waybar
       firefox
       vscode
-      niri
     ];
 
     file.".config/niri/config.kdl".text = ''
