@@ -7,12 +7,6 @@
 }: {
   imports = [
     inputs.self.nixosModules.fonts
-    # Or modules from other flakes (such as nixos-hardware):
-    #  inputs.hardware.nixosModules.common-cpu-amd
-    #  inputs.hardware.nixosModules.common-ssd
-    # You can also split up your configuration and import pieces of it here:
-    #  ./users.nix
-    # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
   ];
 
@@ -21,15 +15,6 @@
       inputs.self.overlays.additions
       inputs.self.overlays.modifications
       inputs.self.overlays.unstable-packages
-
-      # You can also add overlays exported from other flakes:
-      #  neovim-nightly-overlay.overlays.default
-      # Or define it inline, for example:
-      #  (final: prev: {
-      #    hi = final.hello.overrideAttrs (oldAttrs: {
-      #      patches = [ ./change-hello-to-hi.patch ];
-      #   });
-      #  })
     ];
     config = {
       allowUnfree = true;
@@ -41,7 +26,7 @@
       experimental-features = "nix-command flakes";
       flake-registry = "";
     };
-    channel.enable = true; # Disabling is safer but then you lose `nix shell`.
+    channel.enable = true;
   };
   
   networking.hostName = "homelab";

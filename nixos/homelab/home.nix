@@ -7,6 +7,8 @@
 }: {
   imports = [
     inputs.self.homeManagerModules.noctalia
+    inputs.self.homeManagerModules.kitty
+    inputs.self.homeManagerModules.hyprland
   ];
 
   nixpkgs = {
@@ -27,24 +29,14 @@
       firefox
       vscode
     ];
-
-    file.".config/hypr/hyprland.conf".source = ./config/hyprland.conf;
   };
 
+  my.kitty.enable = true;
   my.noctalia.enable = true;
+  my.hyprland.enable = true;
   programs = {
     home-manager.enable = true;
     git.enable = true;
-    kitty.enable = true;
-    fuzzel.enable = true;
-    swaylock.enable = true;
-    waybar.enable = true;
-  };
-
-  services = {
-    mako.enable = true;
-    swayidle.enable = true;
-    polkit-gnome.enable = true;
   };
 
   home.stateVersion = "25.11";
