@@ -17,7 +17,6 @@
       gnome-themes-extra
     ];
 
-    # Theming shotgun.
     gtk = {
       enable = true;
       theme = {
@@ -35,10 +34,28 @@
         gtk-application-prefer-dark-theme = true;
       };
     };
+
     home.sessionVariables = {
       CHROME_FORCE_DARK_MODE = "1";
       ADW_DISABLE_PORTAL = "0";
       COLORFGBG = "15;0";
+    };
+
+    systemd.user.sessionVariables = home.sessionVariables;
+
+    dconf.settings = {
+      "org/gnome/desktop/background" = {
+        picture-uri-dark = "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
+      };
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
+    };
+
+    qt = {
+      enable = true;
+      platformTheme = "gnome";
+      style = "adwaita-dark";
     };
   };
 }
