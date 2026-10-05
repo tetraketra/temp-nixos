@@ -1,3 +1,3 @@
 {
-  my-noctalia = import ./noctalia.nix;
+  noctalia = import ./noctalia.nix;
 }
