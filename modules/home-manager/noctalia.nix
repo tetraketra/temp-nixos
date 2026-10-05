@@ -8,8 +8,7 @@
     inputs.noctalia.homeModules.default
   ];
 
-  options.my.noctalia.enable =
-    lib.mkEnableOption "Noctalia Shell";
+  options.my.noctalia.enable = lib.mkEnableOption "Noctalia Shell";
 
   config = lib.mkIf config.my.noctalia.enable {
     services = {

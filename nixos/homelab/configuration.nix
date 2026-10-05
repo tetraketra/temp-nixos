@@ -66,7 +66,8 @@
     }; 
   };
 
-  programs.hyprland.enable = true; # Must exist before `home-manager`.
+  programs.hyprland.enable = true;
+  programs.kitty.enable = true;
 
   hardware.graphics.enable = true;
   systemd.services.seatd.enable = true;
