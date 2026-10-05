@@ -4,7 +4,26 @@
   inputs,
   pkgs,
   ...
-}: {
+}: 
+let
+  kanagawa-vscode = pkgs.vscode-utils.buildVscodeExtension {
+    pname = "kanagawa";
+    version = "0.0.1";
+
+    # nix-prefetch-url --unpack \
+    #   https://github.com/barklan/kanagawa.vscode/archive/refs/heads/main.tar.gz
+    src = pkgs.fetchFromGitHub {
+      owner = "barklan";
+      repo = "kanagawa.vscode";
+      rev = "main";
+      hash = "sha256-0pmixmzhmn4r5xbi999mcwfpj4pl96aaqsdzlkyklzdr9nb2n6vx=";
+    };
+
+    vscodeExtPublisher = "barklan";
+    vscodeExtName = "kanagawa";
+  };
+in
+{
   options.my.common.enable = lib.mkEnableOption "Common Apps";
 
   config = lib.mkIf config.my.common.enable {
@@ -43,12 +62,13 @@
 
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
-        barklan.kanagawa-vscode
+        kanagawa-vscode
       ];
 
       userSettings = {
         "workbench.colorTheme" = "Kanagawa";
         "editor.semanticHighlighting.enabled" = true;
+        "rust-analyzer.highlighting.strings" = true;
       };
     };
   };
