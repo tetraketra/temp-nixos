@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    # inputs.self.homeManagerModules.example
+    inputs.self.homeManagerModules.noctalia
   ];
 
   nixpkgs = {
@@ -32,6 +32,7 @@
     ];
   };
 
+  noctalia.my.noctalia.enable = true;
   programs = {
     home-manager.enable = true;
     git.enable = true;
@@ -42,7 +43,7 @@
         spawn-at-startup = [
           {
             command = [
-              "${pkgs.noctalia-shell}/bin/noctalia-shell"
+              "noctalia"
             ];
           }
         ];
@@ -89,10 +90,6 @@
         };
       };
     };
-  };
-
-  services.noctalia-shell = {
-    enable = true;
   };
 
   home.stateVersion = "25.11";
