@@ -11,6 +11,10 @@
   options.my.noctalia.enable = lib.mkEnableOption "Noctalia Shell";
 
   config = lib.mkIf config.my.noctalia.enable {
+    home.packages = [
+      pkgs.noctalia
+    ];
+
     services = {
       mako.enable = true;
       swayidle.enable = true;
@@ -23,23 +27,6 @@
       waybar.enable = true;
     };
 
-    programs.noctalia = {
-      enable = true;
-
-      settings = {
-        bar = {
-          density = "comfortable";
-          position = "top";
-        };
-
-        dock = {
-          enabled = true;
-        };
-
-        wallpaper = {
-          enabled = true;
-        };
-      };
-    };
+    home.file.".config/noctalia/config.toml".source = ../../dotfiles/noctalia.config.conf;
   };
 }

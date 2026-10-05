@@ -66,14 +66,13 @@
     }; 
   };
 
-  programs.hyprland.enable = true;
-
   hardware.graphics.enable = true;
   systemd.services.seatd.enable = true;
   xdg.portal = {
     enable = true;
     wlr.enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+    config.common.default = "*";
   };
 
   system.stateVersion = "25.11";
