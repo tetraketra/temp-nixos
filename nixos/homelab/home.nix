@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    inputs.self.homeManagerModules.noctalia
+    inputs.self.homeManagerModules.my-noctalia
   ];
 
   nixpkgs = {
@@ -32,7 +32,7 @@
     ];
   };
 
-  noctalia.my.noctalia.enable = true;
+  my.noctalia.enable = true;
   programs = {
     home-manager.enable = true;
     git.enable = true;
