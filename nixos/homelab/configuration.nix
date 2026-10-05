@@ -57,7 +57,7 @@
       isNormalUser = true;
       description = "bortemoi";
       initialPassword = "bortemoi";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "seat" "video" "input" "render" ];
     };
   };
   
@@ -69,7 +69,27 @@
     };
   };
 
-  programs.niri.enable = true; # Need to have before home-manager.
+  programs.niri.enable = true;
+  security.polkit.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${config.programs.niri.package}/bin/niri-session";
+        user = "bortemoi";
+      };
+    };
+  };
+
+  hardware.graphics.enable = true;
+  services.dbus.enable = true;
+  systemd.services.seatd.enable = true;
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+  };
 
   system.stateVersion = "25.11";
 }

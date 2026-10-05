@@ -57,6 +57,7 @@
           home-manager.nixosModules.home-manager {
             home-manager.extraSpecialArgs = {inherit inputs;};
             home-manager.users.bortemoi = import ./nixos/homelab/home.nix;
+            home-manager.backupFileExtension = "bk"; # Force config replacement.
           }
         ];
       };
