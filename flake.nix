@@ -49,7 +49,7 @@
           ./nixos/homelab/configuration.nix
           home-manager.nixosModules.home-manager {
             home-manager.extraSpecialArgs = {inherit inputs;};
-            home-manager.users.bortemoi = import ./homelab/home.nix;
+            home-manager.users.bortemoi = import ./nixos/homelab/home.nix;
           }
         ];
       };
