@@ -61,8 +61,12 @@ in
       COLORFGBG = "15;0";
     };
 
-    profiles.default = {
-      extensions = with pkgs.vscode-extensions; [
+    programs.vscode = {
+      enable = true;
+
+      mutableExtensionsDir = false;
+
+      extensions = [
         kanagawa-vscode
       ];
 
