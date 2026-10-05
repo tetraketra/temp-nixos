@@ -38,7 +38,7 @@ in
             density = "comfortable";
             position = "top";
             default = {
-              center = [ "clock" "date" ];
+              center = [ "date" "clock" ];
               end = [
                 "media"
                 "tray"
