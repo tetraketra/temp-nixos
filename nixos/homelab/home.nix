@@ -27,13 +27,14 @@
     homeDirectory = "/home/bortemoi";
   };
 
+  systemd.services.home-manager-"${config.system.user.username}".serviceConfig = { RemainAfterExit = "yes"; };
   systemd.user.startServices = "sd-switch";
   my.kitty.enable = true;
   my.noctalia.enable = true;
   my.hyprland.enable = true;
   my.common.enable = true;
   programs = {
-    # home-manager.enable = true;
+    home-manager.enable = true;
     git.enable = true;
   };
 

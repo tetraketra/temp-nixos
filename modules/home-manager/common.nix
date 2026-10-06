@@ -16,6 +16,7 @@
       gnome-themes-extra
       adwaita-qt
       dconf
+      systemd
     ];
 
     gtk = {
