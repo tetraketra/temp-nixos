@@ -33,7 +33,7 @@
   my.hyprland.enable = true;
   my.common.enable = true;
   programs = {
-    home-manager.enable = true;
+    # home-manager.enable = true;
     git.enable = true;
   };
 
