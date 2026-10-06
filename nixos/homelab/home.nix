@@ -27,6 +27,7 @@
     homeDirectory = "/home/bortemoi";
   };
 
+  systemd.user.startServices = "sd-switch";
   my.kitty.enable = true;
   my.noctalia.enable = true;
   my.hyprland.enable = true;

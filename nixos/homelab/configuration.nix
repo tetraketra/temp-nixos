@@ -59,6 +59,10 @@
   services.greetd = { 
     enable = true; 
     settings = { 
+      initial_session = { 
+        command = "${pkgs.hyprland}/bin/Hyprland"; 
+        user = "bortemoi"; 
+      }; 
       default_session = { 
         command = "${pkgs.hyprland}/bin/Hyprland"; 
         user = "bortemoi"; 
