@@ -74,6 +74,13 @@
           "$mod, Tab, workspace, m+1"
         ];
       };
+
+      extraConfig = '' 
+        general { 
+          col.active_border = rgba(98BB6Cff) 
+          col.inactive_border = rgba(54546Dff) 
+        } 
+      '';
     };
   };
 }
