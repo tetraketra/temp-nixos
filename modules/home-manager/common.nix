@@ -16,6 +16,7 @@
       adwaita-icon-theme
       adwaita-dark
       gnome-themes-extra
+      adwaita-qt
     ];
 
     gtk = {
@@ -55,8 +56,8 @@
       enable = true;
       platformTheme = "gnome";
       style = {
-        package = pkgs.adwaita-dark;
-        name = "adwaita-dark";
+        package = pkgs.adwaita-qt;
+        name = "adwaita";
       };
     };
   };
