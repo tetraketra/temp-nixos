@@ -62,5 +62,7 @@
         name = "adwaita";
       };
     };
+
+    vscode.enable = true;
   };
 }
