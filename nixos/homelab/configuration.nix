@@ -7,6 +7,7 @@
 }: {
   imports = [
     inputs.self.nixosModules.fonts
+    noctalia
     ./hardware-configuration.nix
   ];
 
@@ -67,7 +68,7 @@
           while [ -z "$WAYLAND_DISPLAY" ]; do
             sleep 0.1
           done
-          ${pkgs.noctalia-shell}/bin/noctalia
+          ${pkgs.noctalia}/bin/noctalia
         '';
         user = "bortemoi"; 
       }; 
@@ -77,7 +78,7 @@
           while [ -z "$WAYLAND_DISPLAY" ]; do
             sleep 0.1
           done
-          ${pkgs.noctalia-shell}/bin/noctalia
+          ${pkgs.noctalia}/bin/noctalia
         '';
         user = "bortemoi"; 
       }; 
