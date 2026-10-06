@@ -17,7 +17,7 @@
       gnome-themes-extra
       adwaita-qt
       dconf
-      gsettings
+      qt
     ];
 
     gtk = {
@@ -44,6 +44,7 @@
       COLORFGBG = "15;0";
     };
 
+    programs.dconf.enable = true;
     dconf.settings = {
       "org/gnome/desktop/background" = {
         picture-uri-dark = "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
@@ -53,6 +54,7 @@
       };
     };
 
+    programs.qt.enable = true;
     qt = {
       enable = true;
       style = {
