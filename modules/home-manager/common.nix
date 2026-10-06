@@ -40,7 +40,6 @@
       CHROME_FORCE_DARK_MODE = "1";
       ADW_DISABLE_PORTAL = "0";
       COLORFGBG = "15;0";
-      NIXOS_OZONE_WL = "1";
     };
 
     dconf = {
