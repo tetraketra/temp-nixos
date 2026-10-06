@@ -30,9 +30,10 @@
           resize_on_border = true;
           border_size = 2;
           extend_border_grab_area = 10;
-          "col.active_border" = "rgb(98BB6C)"; 
-          "col.inactive_border" = "rgb(54546D)";
         };
+  
+        "col.active_border" = "rgb(98BB6C)"; 
+        "col.inactive_border" = "rgb(54546D)";
 
         decoration = {
           # TODO: styling
