@@ -10,7 +10,6 @@
   config = lib.mkIf config.my.common.enable {
     home.packages = with pkgs; [
       firefox
-      vscode
       btop
       vlc
       adwaita-icon-theme
@@ -41,6 +40,7 @@
       CHROME_FORCE_DARK_MODE = "1";
       ADW_DISABLE_PORTAL = "0";
       COLORFGBG = "15;0";
+      NIXOS_OZONE_WL = "1";
     };
 
     dconf = {
@@ -63,6 +63,14 @@
       };
     };
 
-    vscode.enable = true;
+    programs.vscode = {
+      enable = true;
+      package = pkgs.vscode;
+      mutableExtensionsDir = false;
+    };
+    # TODO: vscode extensions overlay garbage
+    #  https://github.com/nix-community/nix-vscode-extensions/tree/master
+    # TODO: via overlay garbage, get kanagawa theme
+    #  https://github.com/barklan/kanagawa.vscode
   };
 }
