@@ -27,7 +27,16 @@
     homeDirectory = "/home/bortemoi";
   };
 
-  systemd.services.home-manager-${config.system.user.username}.serviceConfig = { RemainAfterExit = "yes"; };
+  system.activationScripts.home-manager-restart = lib.mkIf config.system.user.useHomeManager {
+    text = ''
+      ${pkgs.systemd}/bin/systemctl restart home-manager-${config.system.user.username}.service || true
+    '';
+    deps = [
+      "users"
+      "groups"
+    ];
+  };
+  
   systemd.user.startServices = "sd-switch";
   my.kitty.enable = true;
   my.noctalia.enable = true;
