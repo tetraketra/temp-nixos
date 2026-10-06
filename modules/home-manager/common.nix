@@ -14,7 +14,6 @@
       btop
       vlc
       adwaita-icon-theme
-      adwaita-dark
       gnome-themes-extra
       adwaita-qt
     ];
