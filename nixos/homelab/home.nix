@@ -27,7 +27,7 @@
     homeDirectory = "/home/bortemoi";
   };
 
-  systemd.activationScripts.home-manager-restart = lib.mkIf config.system.user.useHomeManager {
+  systemd.activationScripts.home-manager-restart = lib.mkIf config.systemd.user.useHomeManager {
     text = ''
       ${pkgs.systemd}/bin/systemctl restart home-manager-${config.system.user.username}.service || true
     '';
