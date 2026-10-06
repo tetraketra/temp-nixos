@@ -59,11 +59,26 @@
   services.greetd = {
     enable = true;
     settings = {
+      initial_session = {
+        command = "${pkgs.dbus}/bin/dbus-run-session ${pkgs.hyprland}/bin/Hyprland";
+        user = "bortemoi";
+      };
       default_session = {
         command = "${pkgs.dbus}/bin/dbus-run-session ${pkgs.hyprland}/bin/Hyprland";
         user = "bortemoi";
       };
     };
+  };
+
+  environment.systemPackages = [
+    pkgs.hyprland
+  ];
+
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    XDG_CURRENT_DESKTOP = "Hyprland";
+    XDG_SESSION_TYPE = "wayland";
+    XDG_SESSION_DESKTOP = "Hyprland";
   };
 
   hardware.graphics.enable = true;

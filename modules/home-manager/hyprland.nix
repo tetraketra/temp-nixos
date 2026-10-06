@@ -7,7 +7,7 @@
 }: {
   options.my.hyprland.enable = lib.mkEnableOption "Hyprland Compositor";
 
-  config = lib.mkIf config.my.hyprland.enable {
+  config = lib.mkIf config.my.hyprland.enable {    
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
