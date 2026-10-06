@@ -44,6 +44,16 @@
       extraGroups = [ "networkmanager" "wheel" "seat" "video" "input" "render" ];
     };
   };
+
+  system.activationScripts.home-manager-restart = lib.mkIf config.system.user.useHomeManager {
+    text = ''
+      ${pkgs.systemd}/bin/systemctl restart home-manager-${config.system.user.username}.service || true
+    '';
+    deps = [
+      "users"
+      "groups"
+    ];
+  };
   
   services.openssh = {
     enable = true;

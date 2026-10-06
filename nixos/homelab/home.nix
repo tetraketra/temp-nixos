@@ -27,16 +27,6 @@
     homeDirectory = "/home/bortemoi";
   };
 
-  systemd.activationScripts.home-manager-restart = lib.mkIf config.systemd.user.useHomeManager {
-    text = ''
-      ${pkgs.systemd}/bin/systemctl restart home-manager-${config.system.user.username}.service || true
-    '';
-    deps = [
-      "users"
-      "groups"
-    ];
-  };
-
   systemd.user.startServices = "sd-switch";
   my.kitty.enable = true;
   my.noctalia.enable = true;
