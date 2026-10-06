@@ -59,7 +59,7 @@
   services.greetd = {
     enable = true;
     settings = {
-      initial_session = {
+      default_session = {
         command = "${pkgs.dbus}/bin/dbus-run-session ${pkgs.hyprland}/bin/Hyprland";
         user = "bortemoi";
       };

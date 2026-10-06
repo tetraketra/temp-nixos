@@ -43,7 +43,6 @@
         };
 
         "exec-once" = [
-          "dbus-update-activation-environment --systemd --all"
           "noctalia"
         ];
 
