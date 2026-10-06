@@ -22,7 +22,7 @@
         };
 
         general = {
-          gaps_in = 3;
+          gaps_in = 1.5;
           gaps_out = 3;
 
           layout = "dwindle";
@@ -35,12 +35,12 @@
         };
 
         decoration = {
-          active_opacity = 0.95;
-          inactive_opacity = 0.85;
+          active_opacity = 1;
+          inactive_opacity = 0.90;
 
           blur = {
             enabled = true;
-            size = 5;
+            size = 10;
             passes = 2;
           };
         };
