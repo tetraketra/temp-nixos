@@ -16,6 +16,8 @@
       adwaita-icon-theme
       gnome-themes-extra
       adwaita-qt
+      dconf
+      gsettings
     ];
 
     gtk = {
@@ -53,7 +55,6 @@
 
     qt = {
       enable = true;
-      platformTheme = "gnome";
       style = {
         package = pkgs.adwaita-qt;
         name = "adwaita";
