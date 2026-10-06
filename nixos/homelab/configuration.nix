@@ -62,11 +62,23 @@
     enable = true; 
     settings = { 
       initial_session = { 
-        command = "${pkgs.hyprland}/bin/Hyprland && ( while [ -z \"$WAYLAND_DISPLAY\" ]; do sleep 0.1; done; noctalia )"; 
+        command = ''
+          ${pkgs.hyprland}/bin/Hyprland &
+          while [ -z "$WAYLAND_DISPLAY" ]; do
+            sleep 0.1
+          done
+          ${pkgs.noctalia-shell}/bin/noctalia
+        '';
         user = "bortemoi"; 
       }; 
       default_session = { 
-        command = "${pkgs.hyprland}/bin/Hyprland && ( while [ -z \"$WAYLAND_DISPLAY\" ]; do sleep 0.1; done; noctalia )"; 
+        command = ''
+          ${pkgs.hyprland}/bin/Hyprland &
+          while [ -z "$WAYLAND_DISPLAY" ]; do
+            sleep 0.1
+          done
+          ${pkgs.noctalia-shell}/bin/noctalia
+        '';
         user = "bortemoi"; 
       }; 
     }; 
