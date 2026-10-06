@@ -16,6 +16,8 @@ in
   options.my.noctalia.enable = lib.mkEnableOption "Noctalia Shell";
 
   config = lib.mkIf config.my.noctalia.enable {
+    home.activationGenerateGcRoot = false;
+    
     services = {
       mako.enable = true;
       swayidle.enable = true;
