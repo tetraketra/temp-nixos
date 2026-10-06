@@ -28,7 +28,7 @@
           layout = "dwindle";
 
           resize_on_border = true;
-          border_size = 2;
+          border_size = 1;
           extend_border_grab_area = 10;
           "col.active_border" = "rgba(98BB6Cff)";
           "col.inactive_border" = "rgba(54546Dff)"; 
