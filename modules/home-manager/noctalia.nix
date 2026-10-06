@@ -59,6 +59,9 @@ in
               radius = 0;
               scale = 0.8;
               shadow = false;
+              border_size = 1;
+              border_side = "right";
+              border_color = "#54546D";
             };
           };
 
