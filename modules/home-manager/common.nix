@@ -44,17 +44,18 @@
       COLORFGBG = "15;0";
     };
 
-    programs.dconf.enable = true;
-    dconf.settings = {
-      "org/gnome/desktop/background" = {
-        picture-uri-dark = "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
-      };
-      "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-dark";
+    dconf = {
+      enable = true;
+      settings = {
+        "org/gnome/desktop/background" = {
+          picture-uri-dark = "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
+        };
+        "org/gnome/desktop/interface" = {
+          color-scheme = "prefer-dark";
+        };
       };
     };
 
-    programs.qt.enable = true;
     qt = {
       enable = true;
       style = {
