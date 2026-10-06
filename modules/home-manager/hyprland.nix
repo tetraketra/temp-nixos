@@ -35,7 +35,14 @@
         };
 
         decoration = {
-          # TODO: styling
+          active_opacity = 0.95;
+          inactive_opacity = 0.85;
+
+          blur = {
+            enabled = true;
+            size = 5;
+            passes = 2;
+          };
         };
 
         misc = {
