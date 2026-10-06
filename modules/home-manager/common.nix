@@ -14,6 +14,7 @@
       btop
       vlc
       adwaita-icon-theme
+      adwaita-dark
       gnome-themes-extra
     ];
 
@@ -53,7 +54,10 @@
     qt = {
       enable = true;
       platformTheme = "gnome";
-      style = "adwaita-dark";
+      style = {
+        package = pkgs.adwaita-dark;
+        name = "adwaita-dark";
+      };
     };
   };
 }
