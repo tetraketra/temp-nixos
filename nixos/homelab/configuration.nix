@@ -55,16 +55,18 @@
 
   security.polkit.enable = true;
   services.gnome.gnome-keyring.enable = true;
-
+        # "exec-once" = [
+        #   "while [ -z \"$WAYLAND_DISPLAY\" ]; do sleep 0.1; done; noctalia"
+        # ];
   services.greetd = { 
     enable = true; 
     settings = { 
       initial_session = { 
-        command = "${pkgs.hyprland}/bin/Hyprland"; 
+        command = "${pkgs.hyprland}/bin/Hyprland && ( while [ -z \"$WAYLAND_DISPLAY\" ]; do sleep 0.1; done; noctalia )"; 
         user = "bortemoi"; 
       }; 
       default_session = { 
-        command = "${pkgs.hyprland}/bin/Hyprland"; 
+        command = "${pkgs.hyprland}/bin/Hyprland && ( while [ -z \"$WAYLAND_DISPLAY\" ]; do sleep 0.1; done; noctalia )"; 
         user = "bortemoi"; 
       }; 
     }; 

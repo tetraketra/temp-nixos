@@ -42,10 +42,6 @@
           disable_hyprland_logo = true;
         };
 
-        # "exec-once" = [
-        #   "while [ -z \"$WAYLAND_DISPLAY\" ]; do sleep 0.1; done; noctalia"
-        # ];
-
         "$mod" = "SUPER";
 
         bind = [
