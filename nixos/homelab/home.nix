@@ -37,21 +37,5 @@
     git.enable = true;
   };
 
-  systemd.user.services.noctalia = {
-    Unit = {
-      Description = "Noctalia Shell";
-      After = [ "graphical-session.target" ];
-    };
-
-    Service = {
-      ExecStart = "${pkgs.noctalia-shell}/bin/noctalia";
-      Restart = "on-failure";
-    };
-
-    Install = {
-      WantedBy = [ "graphical-session.target" ];
-    };
-  };
-
   home.stateVersion = "25.11";
 }
