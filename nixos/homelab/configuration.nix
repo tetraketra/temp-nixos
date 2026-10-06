@@ -45,6 +45,8 @@
     };
   };
 
+  # https://github.com/nix-community/home-manager/issues/7166
+  system.user.useHomeManager = true;
   system.activationScripts.home-manager-restart = lib.mkIf config.system.user.useHomeManager {
     text = ''
       ${pkgs.systemd}/bin/systemctl restart home-manager-${config.system.user.username}.service || true
