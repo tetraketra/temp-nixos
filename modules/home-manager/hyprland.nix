@@ -43,7 +43,7 @@
         };
 
         "exec-once" = [
-          "noctalia"
+          "while [ -z \"$WAYLAND_DISPLAY\" ]; do sleep 0.1; done; noctalia"
         ];
 
         "$mod" = "SUPER";
